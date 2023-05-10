@@ -1,4 +1,5 @@
 import Header from "./Components/Layout/Header";
+import MealList from "./Components/Meals/MealList";
 import MealSummary from "./Components/Meals/MealSummary";
 
 function App() {
@@ -6,7 +7,7 @@ function App() {
     <div>
       
       <Header></Header>
-      {/* <MealSummary></MealSummary> */}
+      <MealList></MealList>
     </div>
   );
 }

@@ -12,8 +12,8 @@ const Header = () => {
       </header>
       <div className={classes["main-image"]}>
         <img src={mealsimage}></img>
-        
-      </div><MealSummary></MealSummary>
+      </div>
+      <MealSummary></MealSummary>
     </Fragment>
   );
 };
