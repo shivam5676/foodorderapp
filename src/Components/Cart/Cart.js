@@ -1,6 +1,13 @@
+import { useState } from "react";
 import Modal from "../UI/Modal";
 import classes from "./Cart.module.css";
-const Cart = () => {
+const Cart = (props) => {
+
+  
+  const CartHandler=()=>{
+
+props.onClose();
+  }
   const Cartitems = (
     <ul className={classes["cart-items"]}>
       {[
@@ -12,18 +19,18 @@ const Cart = () => {
           price: 12.99,
         },
       ].map((items) => (
-        <li>{items.food}</li>
+        <li key={items.id}>{items.food}</li>
       ))}
     </ul>
   );
   return (
-    <Modal>{Cartitems}
+    <Modal onClose={props.onClose}>{Cartitems}
       <div className={classes.total}>
         <span>Amount</span>
         <span>23.99</span>
       </div>
       <div className={classes.actions}>
-        <button className={classes["button__alt"]}>Close</button>
+        <button className={classes["button__alt"] } onClick={CartHandler}>Close</button>
         <button className={classes.button}>Order</button>
       </div></Modal>
     

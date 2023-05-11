@@ -1,10 +1,9 @@
 import { Fragment } from "react";
 import classes from "../UI/Modal.module.css";
-import ReactDOM  from "react-dom";
+import ReactDOM from "react-dom";
 
 const BackDrop = (props) => {
-  return;
-  <div className={classes.backdrop}></div>;
+  return <div className={classes.backdrop} onClick={props.onClose}></div>;
 };
 const ModalOverlay = (props) => {
   return (
@@ -15,10 +14,10 @@ const ModalOverlay = (props) => {
 };
 //we can create both files in sepereatye folder like other component but they are not too large coded file thats why we added them here
 const portalElement = document.getElementById("overlays");
-const Modal =(props) => {
+const Modal = (props) => {
   return (
     <Fragment>
-      {ReactDOM.createPortal(<BackDrop></BackDrop>, portalElement)}
+      {ReactDOM.createPortal(<BackDrop onClose={props.onClose}></BackDrop>, portalElement)}
       {ReactDOM.createPortal(
         <ModalOverlay>{props.children}</ModalOverlay>,
         portalElement
@@ -28,4 +27,4 @@ const Modal =(props) => {
     </Fragment>
   );
 };
-export default Modal
+export default Modal;
