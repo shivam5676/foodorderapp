@@ -5,7 +5,7 @@ const MealSummary = () => {
   return (
     <React.Fragment>
       <section className={classes.summary}>
-        <h2>Delicious food ......Delicious!</h2>
+        <h2>Delicious items ......Delicious!</h2>
         <p>
           Choose your favorite meal from our broad selection of available meals
           and enjoy a delicious lunch or dinner at home.
@@ -15,7 +15,6 @@ const MealSummary = () => {
           and of course by experienced chefs!
         </p>
       </section>
-     
     </React.Fragment>
   );
 };

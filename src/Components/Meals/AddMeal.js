@@ -8,7 +8,8 @@ const AddMeal = (props) => {
     (meal) => (
       <MealItem
       key={meal.id}
-        food={meal.food}
+      id={meal.id}
+        items={meal.items}
         details={meal.details}
         price={meal.price}
       ></MealItem>
