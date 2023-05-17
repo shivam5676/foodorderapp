@@ -1,17 +1,19 @@
 import { useState } from "react";
 import Input from "../UI/Input";
 import classes from "./AddMealForm.module.css";
-const AddMealForm = ( props) => {
+const AddMealForm = (props) => {
   const [formData, setformData] = useState("");
   const inputHandler = (event) => {
     setformData(event.target.value);
   };
   const formHandler = (event) => {
     event.preventDefault();
-    // props.OrderQuantity(+formData);
-    console.log("formData:", formData); // Check the value before conversion
+    if (formData < 1 || formData > 5 || formData.length == 0) {
+      return;
+    }
+
     const convertedValue = +formData;
-    console.log("convertedValue:", convertedValue); // Check the converted value
+
     props.OrderQuantity(convertedValue);
   };
 
